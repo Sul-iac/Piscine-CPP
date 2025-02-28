@@ -6,7 +6,7 @@
 /*   By: qbarron <qbarron@student.42perpignan.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 09:28:48 by qbarron           #+#    #+#             */
-/*   Updated: 2025/02/24 09:40:33 by qbarron          ###   ########.fr       */
+/*   Updated: 2025/02/28 10:52:08 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define MYAWESOMEPHONEBOOK_CPP
 # include <iostream>
 # include <string>
-
+#include <iomanip>
 
 
 class Contact{
@@ -47,6 +47,7 @@ class PhoneBook{
 		Contact contacts[8];
 		int		nbrContact; //nbr reels de contacts
 		int		oldIndex;	//ancien contact si remplacement
+		int		contactIndex;
 	public:
 		PhoneBook();
 		void addContact();

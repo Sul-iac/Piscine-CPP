@@ -6,11 +6,16 @@
 /*   By: qbarron <qbarron@student.42perpignan.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 09:36:27 by qbarron           #+#    #+#             */
-/*   Updated: 2025/02/24 09:39:24 by qbarron          ###   ########.fr       */
+/*   Updated: 2025/02/24 09:45:30 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MyAwesomePhonebook.hpp"
+
+Contact::Contact() 
+	:firstName("Unknown"), lastName("Unknown"), nickName("Unknown"), 
+	phoneNumber("Unknown"), darkestSecret("Unknown"){}
+
 
 // les lignes ci dessous permettent de prendre
 // et d'affecter une valeur aux attributs prives dans private
@@ -30,7 +35,7 @@ void Contact::setDarkestSecret(const std::string &newDarkestSecret){
 	darkestSecret = newDarkestSecret;
 }
 // les lignes ci dessous permettent de lire 
-// les variables privees du setters au-dessus (getterst)
+// les variables privees (getters)
 std::string Contact::getFirstName() const{
 	return this->firstName;
 }
