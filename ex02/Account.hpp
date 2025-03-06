@@ -10,7 +10,10 @@
 
 #pragma once
 #ifndef __ACCOUNT_H__
-#define __ACCOUNT_H__
+# define __ACCOUNT_H__
+
+# include <string>
+# include <iostream>
 
 // ************************************************************************** //
 //                               Account Class                                //

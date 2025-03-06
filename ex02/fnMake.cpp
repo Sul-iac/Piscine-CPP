@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   getters.cpp                                        :+:      :+:    :+:   */
+/*   fnMake.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qbarron <qbarron@student.42perpignan.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/06 06:27:03 by qbarron           #+#    #+#             */
-/*   Updated: 2025/03/06 07:56:49 by qbarron          ###   ########.fr       */
+/*   Created: 2025/03/06 07:54:54 by qbarron           #+#    #+#             */
+/*   Updated: 2025/03/06 07:55:00 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Account.hpp"
 
-int		Account::getNbAccounts( void ){
+
+void	Account::makeDeposit( int deposit ){
 	
 }
 
-int		Account::getTotalAmount( void ){
+bool	Account::makeWithdrawal( int withdrawal ){
 	
 }
 
-int		Account::getNbDeposits( void ){
+int		Account::checkAmount( void ) const{
 	
 }
-
-int		Account::getNbWithdrawals( void ){
-	
-}
-
-
