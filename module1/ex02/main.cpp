@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qbarron <qbarron@student.42perpignan.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/20 15:53:19 by qbarron           #+#    #+#             */
-/*   Updated: 2025/03/20 16:34:40 by qbarron          ###   ########.fr       */
+/*   Created: 2025/03/20 16:42:32 by qbarron           #+#    #+#             */
+/*   Updated: 2025/03/20 16:59:20 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <iostream>
+#include <string>
 
-Zombie::Zombie() {}
-Zombie::~Zombie() {}
+int main() {
+	std::string nameVar = "HI THIS IS BRAIN";
+	std::string* stringPtr = &nameVar;
+	std::string& stringRef = nameVar;
+	
+	std::cout<<&nameVar<<std::endl;
+	std::cout<<stringPtr<<std::endl;
+	std::cout<<&stringRef<<std::endl;
+	
+	std::cout<<nameVar<<std::endl;
+	std::cout<<*stringPtr<<std::endl;
+	std::cout<<stringRef<<std::endl;
 
-void Zombie::setNames(std::string &name) {
-	_name = name;
-}
-
-void Zombie::announce(void) {
-	std::cout<<_name<<" BraiiiiiiinnnzzzZ..."<<std::endl;
+	return(0);
 }
