@@ -1,11 +1,10 @@
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = Account
-SRCS =	FnDisplay.cpp \
-		FnMake.cpp \
-		Getters.cpp \
-		test.cpp
+NAME = Zombie
+SRCS =	main.cpp \
+		newZombie.cpp \
+		randomChump.cpp 
 
 OBJS = $(SRCS:.cpp=.o)
 
