@@ -1,21 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qbarron <qbarron@student.42perpignan.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/20 15:50:44 by qbarron           #+#    #+#             */
-/*   Updated: 2025/03/20 15:51:02 by qbarron          ###   ########.fr       */
+/*   Created: 2025/03/15 14:21:20 by qbarron           #+#    #+#             */
+/*   Updated: 2025/03/20 15:51:01 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int main() {
-	Zombie* z1 = newZombie("Zombie mafia boss lvl 10000: ");
-	z1->announce();
-	delete z1;
+Zombie::Zombie(const std::string &name) : name(name) {}
+Zombie::~Zombie() {}
 
-	randomChump("Zombie mod lvl 5: ");
-}
