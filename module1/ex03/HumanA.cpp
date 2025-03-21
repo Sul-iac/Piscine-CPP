@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qbarron <qbarron@student.42perpignan.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/20 17:10:03 by qbarron           #+#    #+#             */
-/*   Updated: 2025/03/21 21:41:23 by qbarron          ###   ########.fr       */
+/*   Created: 2025/03/21 20:53:31 by qbarron           #+#    #+#             */
+/*   Updated: 2025/03/21 21:37:53 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
 #include "HumanA.hpp"
 #include "HumanB.hpp"
+#include "Weapon.hpp"
 
-int main() {
-	Weapon club("A machine gun");
-	HumanA bob("Bob", club);
+HumanA::HumanA(const std::string &name, Weapon &weapon) : _name(name) _weapon(weapon) {
+	
+}
+
+HumanA::~HumanA() {
+	
+}
+
+void HumanA::attack() {
+	
 }

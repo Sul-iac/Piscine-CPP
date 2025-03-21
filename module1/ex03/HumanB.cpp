@@ -1,20 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qbarron <qbarron@student.42perpignan.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/20 17:10:03 by qbarron           #+#    #+#             */
-/*   Updated: 2025/03/21 21:41:23 by qbarron          ###   ########.fr       */
+/*   Created: 2025/03/21 20:54:36 by qbarron           #+#    #+#             */
+/*   Updated: 2025/03/21 20:55:07 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
 #include "HumanA.hpp"
 #include "HumanB.hpp"
+#include "Weapon.hpp"
 
-int main() {
-	Weapon club("A machine gun");
-	HumanA bob("Bob", club);
-}

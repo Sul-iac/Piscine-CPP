@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qbarron <qbarron@student.42perpignan.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/20 17:10:03 by qbarron           #+#    #+#             */
-/*   Updated: 2025/03/21 21:41:23 by qbarron          ###   ########.fr       */
+/*   Created: 2025/03/21 20:50:06 by qbarron           #+#    #+#             */
+/*   Updated: 2025/03/21 21:43:22 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,18 @@
 #include "HumanA.hpp"
 #include "HumanB.hpp"
 
-int main() {
-	Weapon club("A machine gun");
-	HumanA bob("Bob", club);
+Weapon::Weapon() {
+	
+}
+
+Weapon::~Weapon() {
+	
+}
+
+const std::string& Weapon::getType() const {
+	
+}
+
+void Weapon::setType(const std::string &newType) {
+
 }
