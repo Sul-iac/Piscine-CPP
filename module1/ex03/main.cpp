@@ -5,11 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: qbarron <qbarron@student.42perpignan.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/20 17:10:03 by qbarron           #+#    #+#             */
-/*   Updated: 2025/03/21 22:06:28 by qbarron          ###   ########.fr       */
+/*   Created: 2025/03/21 22:28:50 by qbarron           #+#    #+#             */
+/*   Updated: 2025/03/22 10:24:18 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Weapon.hpp"
 #include "HumanA.hpp"
 #include "HumanB.hpp"
 
@@ -22,7 +23,7 @@ int main() {
 		bob.attack();
 	}
 	{
-		Weapon club = Weapon("crude spiked club");
+		Weapon club = Weapon("Machine gun");
 		HumanB jim("Jim");
 		jim.setWeapon(club);
 		jim.attack();

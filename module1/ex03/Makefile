@@ -1,10 +1,10 @@
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = thisIsBrain
-SRCS =	HumanA.cpp \
+NAME = fight
+SRCS =	main.cpp \
+		HumanA.cpp \
 		HumanB.cpp \
-		main.cpp \
 		Weapon.cpp
 
 OBJS = $(SRCS:.cpp=.o)
