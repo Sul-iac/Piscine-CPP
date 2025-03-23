@@ -6,7 +6,7 @@
 /*   By: qbarron <qbarron@student.42perpignan.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 10:00:26 by qbarron           #+#    #+#             */
-/*   Updated: 2025/03/23 10:50:34 by qbarron          ###   ########.fr       */
+/*   Updated: 2025/03/23 11:14:51 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <iostream>
 # include <string>
-
 
 class Harl {
 	private: 
