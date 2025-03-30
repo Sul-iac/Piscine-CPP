@@ -6,7 +6,7 @@
 /*   By: qbarron <qbarron@student.42perpignan.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 10:00:06 by qbarron           #+#    #+#             */
-/*   Updated: 2025/03/23 10:55:20 by qbarron          ###   ########.fr       */
+/*   Updated: 2025/03/30 14:15:10 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 int main(int argc, char *argv[]) {
 	if(argc != 2) {
-		std::cerr<<"Wrong number of arguments"<<std::endl;
-		return(1);
+		std::cerr << "Error in args" <<std::endl;
+		return(0);
 	}
-	std::string level = argv[1];
 	Harl harl;
-	harl.complain(level);
-	return(0);
+	harl.complain(argv[1]);
 }

@@ -6,7 +6,7 @@
 /*   By: qbarron <qbarron@student.42perpignan.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 10:00:54 by qbarron           #+#    #+#             */
-/*   Updated: 2025/03/23 11:14:44 by qbarron          ###   ########.fr       */
+/*   Updated: 2025/03/30 14:15:54 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,19 +33,17 @@ void Harl::warning() {
 void Harl::error() {
 	std::cout<<"This is unacceptable! I want to speak to the manager now."<<std::endl;
 }
+
 typedef void	(Harl::*HarlFunc)();
 
 void Harl::complain(std::string level) {
-	const std::string levels[4]		= {	"DEBUG",
-										"INFOS",
-										"WARNING",
-										"ERROR"};
-	
-	HarlFunc function[4] = {&Harl::debug, &Harl::infos, &Harl::warning, &Harl::error};
-	for(int i = 0; i < 4; i++) {
+	std::string levels[4] = {"DEBUG", "INFOS", "WARNING", "ERROR"};
+	HarlFunc functions[4] = {&Harl::debug, &Harl::infos, &Harl::warning, &Harl::error};
+
+	for(int i = 0; i < 4; i++){
 		if(level == levels[i]) {
-			(this->*function[i])();
+			(this->*functions[i])();
 			return;
-		}
+		}	
 	}
 }
