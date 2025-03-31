@@ -5,7 +5,8 @@ NAME = Account
 SRCS =	FnDisplay.cpp \
 		FnMake.cpp \
 		Getters.cpp \
-		test.cpp
+		Account.cpp \
+		tests.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

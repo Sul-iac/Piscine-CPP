@@ -6,7 +6,7 @@
 /*   By: qbarron <qbarron@student.42perpignan.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 07:54:54 by qbarron           #+#    #+#             */
-/*   Updated: 2025/03/15 14:07:21 by qbarron          ###   ########.fr       */
+/*   Updated: 2025/03/31 15:32:34 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,16 @@ bool	Account::makeWithdrawal( int withdrawal ) {
 	std::cout<<" index:"<<_accountIndex<<";p_amount:"<<_amount;
 	if(withdrawal > _amount){
 		std::cout<<";withdrawal:refused"<<std::endl;
-		return 1;
+		return false;
 	}
 	_amount -= withdrawal;
 	_nbWithdrawals++;
 	_totalAmount -= withdrawal;
 	_totalNbWithdrawals++;
 	std::cout<<";withdrawal:"<<withdrawal<<";amount:"<<_amount<<";nb_withdrawal:"<<_nbWithdrawals<<std::endl;
+	return true;
 }
 
 int		Account::checkAmount( void ) const{
-	
+	return _amount;
 }
