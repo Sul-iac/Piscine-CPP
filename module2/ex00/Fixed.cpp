@@ -6,7 +6,7 @@
 /*   By: qbarron <qbarron@student.42perpignan.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 12:09:17 by qbarron           #+#    #+#             */
-/*   Updated: 2025/04/01 21:37:38 by qbarron          ###   ########.fr       */
+/*   Updated: 2025/04/01 21:59:21 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Fixed::Fixed(const Fixed& other) {
 Fixed& Fixed::operator= (const Fixed& other) {
 	std::cout << "Copy assignement operator called" << std::endl;
 	if(this != &other) {
-		fixedNbr = other.fixedNbr;
+		fixedNbr = other.getRawBits();
 	}
 	return(*this);
 }

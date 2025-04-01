@@ -6,7 +6,7 @@
 /*   By: qbarron <qbarron@student.42perpignan.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 13:42:08 by qbarron           #+#    #+#             */
-/*   Updated: 2025/04/01 21:34:11 by qbarron          ###   ########.fr       */
+/*   Updated: 2025/04/01 21:51:40 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main(void) {
 	Fixed c;
 
 	c = b;
-	
+
 	std::cout << a.getRawBits() << std::endl;
 	std::cout << b.getRawBits() << std::endl;
 	std::cout << c.getRawBits() << std::endl;
