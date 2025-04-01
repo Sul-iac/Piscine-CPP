@@ -6,13 +6,22 @@
 /*   By: qbarron <qbarron@student.42perpignan.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 13:42:08 by qbarron           #+#    #+#             */
-/*   Updated: 2025/04/01 13:42:54 by qbarron          ###   ########.fr       */
+/*   Updated: 2025/04/01 21:34:11 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
 int main(void) {
-	Fixed nombre(12.43);
+	Fixed a;
+	Fixed b(a);
+	Fixed c;
+
+	c = b;
 	
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << c.getRawBits() << std::endl;
+	
+	return(0);
 }
