@@ -6,7 +6,7 @@
 /*   By: qbarron <qbarron@student.42perpignan.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 22:19:56 by qbarron           #+#    #+#             */
-/*   Updated: 2025/04/02 15:23:19 by qbarron          ###   ########.fr       */
+/*   Updated: 2025/04/02 17:13:49 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,10 @@ class Fixed {
 		Fixed(const float value);
 		Fixed(const Fixed& other);
 		float toFloat(void) const;
+		Fixed& operator=(const Fixed& other);
 		int toInt(void) const;
+		int getRawBits(void) const;
+		void setRawBit(int const raw);
 		~Fixed();
 };
 

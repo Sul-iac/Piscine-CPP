@@ -6,7 +6,7 @@
 /*   By: qbarron <qbarron@student.42perpignan.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 22:20:52 by qbarron           #+#    #+#             */
-/*   Updated: 2025/04/02 15:29:32 by qbarron          ###   ########.fr       */
+/*   Updated: 2025/04/02 17:15:34 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,26 @@ Fixed::Fixed(const Fixed& other) {
 	}
 }
 
+void Fixed::setRawBit(int const raw){
+	this->value = raw;
+}
+
+int Fixed::getRawBits(void) const {
+	std::cout<<"getRawBits member function called" << std::endl;
+	return(value);
+}
+
+Fixed& Fixed::operator=(const Fixed& other) {
+	std::cout<<"Copy assignement operator called" << std::endl;
+	if(this != &other) {
+		this->value = other.getRawBits();
+	}
+	return(*this);
+}
+
 // surcharge d'operateur
 std::ostream& operator<<(std::ostream& flux, Fixed const &value) {
-	std::cout << "Copy assignment operator called" << std::endl;
-	flux << value.toFloat() << std::endl;
+	flux << value.toFloat();
 	return(flux);
 }
 
