@@ -6,7 +6,7 @@
 /*   By: qbarron <qbarron@student.42perpignan.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 22:20:52 by qbarron           #+#    #+#             */
-/*   Updated: 2025/04/02 10:35:53 by qbarron          ###   ########.fr       */
+/*   Updated: 2025/04/02 15:29:32 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,33 +17,41 @@ Fixed::Fixed() {
 }
 
 // constructeur d'int
-Fixed::Fixed(const int fixedInt) {
+Fixed::Fixed(const int value) {
 	std::cout << "Int constructor called" << std::endl;
+	this->value = value * pow(2, this->fracBits);
+	toInt();
 }
 
 // constructeur de float
-Fixed::Fixed(const float fixedFloat) {
+Fixed::Fixed(const float value) {
 	std::cout << "Float constructor called" << std::endl;
+	this->value = roundf(value * pow(2, this->fracBits));
+	toFloat();
 }
 
 // constructeur de copie
 Fixed::Fixed(const Fixed& other) {
 	std::cout << "Copy constructor called" << std::endl;
+	if(this != &other) {
+		value = other.value;
+	}
 }
 
 // surcharge d'operateur
-std::ostream& Fixed::operator<<(std::ostream& flux) { 
-	std::cout << "copy assignment operator called" << std::endl;
-	flux << this->fixedFloat << this->fixedInt << std::endl;
+std::ostream& operator<<(std::ostream& flux, Fixed const &value) {
+	std::cout << "Copy assignment operator called" << std::endl;
+	flux << value.toFloat() << std::endl;
 	return(flux);
 }
 
 float Fixed::toFloat(void) const {
-	
+	float result = this->value / pow(2, fracBits);
+	return(result);
 }
 
 int Fixed::toInt(void) const {
-	
+	return(this->value / pow(2, this->fracBits));
 }
 
 Fixed::~Fixed() {
