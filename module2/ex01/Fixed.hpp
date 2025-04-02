@@ -6,7 +6,7 @@
 /*   By: qbarron <qbarron@student.42perpignan.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 22:19:56 by qbarron           #+#    #+#             */
-/*   Updated: 2025/04/02 10:21:13 by qbarron          ###   ########.fr       */
+/*   Updated: 2025/04/02 15:23:19 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,18 @@
 
 class Fixed {
 	private:
-		int						fixedInt;
-		float					fixedFloat;
+		int						value;
 		static const int		fracBits = 8;
 	public:
 		Fixed();
-		Fixed(const int fixedInt);
-		Fixed(const float fixedFloat);
+		Fixed(const int value);
+		Fixed(const float value);
 		Fixed(const Fixed& other);
-		std::ostream& operator<<(std::ostream& flux);
 		float toFloat(void) const;
 		int toInt(void) const;
 		~Fixed();
 };
 
+std::ostream& operator<<(std::ostream& flux, Fixed const &value);
+	
 #endif	
