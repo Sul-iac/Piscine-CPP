@@ -6,7 +6,7 @@
 /*   By: qbarron <qbarron@student.42perpignan.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 22:20:52 by qbarron           #+#    #+#             */
-/*   Updated: 2025/04/02 17:15:34 by qbarron          ###   ########.fr       */
+/*   Updated: 2025/04/02 17:27:47 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,11 @@ Fixed::Fixed(const float value) {
 Fixed::Fixed(const Fixed& other) {
 	std::cout << "Copy constructor called" << std::endl;
 	if(this != &other) {
-		value = other.value;
+		this->value = other.value;
 	}
 }
 
-void Fixed::setRawBit(int const raw){
+void Fixed::setRawBit(int const raw) {
 	this->value = raw;
 }
 
@@ -47,6 +47,7 @@ int Fixed::getRawBits(void) const {
 	return(value);
 }
 
+// surchage d'operateur
 Fixed& Fixed::operator=(const Fixed& other) {
 	std::cout<<"Copy assignement operator called" << std::endl;
 	if(this != &other) {
@@ -62,7 +63,7 @@ std::ostream& operator<<(std::ostream& flux, Fixed const &value) {
 }
 
 float Fixed::toFloat(void) const {
-	float result = this->value / pow(2, fracBits);
+	float result = this->value / pow(2, this->fracBits);
 	return(result);
 }
 
