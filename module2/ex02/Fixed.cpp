@@ -6,17 +6,17 @@
 /*   By: qbarron <qbarron@student.42perpignan.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 22:20:52 by qbarron           #+#    #+#             */
-/*   Updated: 2025/04/02 21:19:42 by qbarron          ###   ########.fr       */
+/*   Updated: 2025/04/02 21:44:58 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed() {}
+Fixed::Fixed() : value(0) {}
 
 // constructeur d'int
 Fixed::Fixed(const int value) {
-	this->value = value * (1 << this->fracBits);
+	this->value = value << this->fracBits;
 }
 
 // constructeur de float
@@ -27,7 +27,7 @@ Fixed::Fixed(const float value) {
 // constructeur de copie
 Fixed::Fixed(const Fixed& other) {
 	if(this != &other) {
-		this->value = other.value;
+		*this = other;
 	}
 }
 
@@ -43,6 +43,12 @@ int Fixed::getRawBits(void) const {
 std::ostream& operator<<(std::ostream& flux, Fixed const &value) {
 	flux << value.toFloat();
 	return(flux);
+}
+
+Fixed& Fixed::operator=(const Fixed &fixed)
+{
+	this->value = fixed.getRawBits();
+	return *this;
 }
 
 // surcharge d'operateur >
@@ -77,22 +83,22 @@ bool operator!=(const Fixed& a, const Fixed& b) {
 
 // surcharge d'operateur *
 Fixed operator*(const Fixed& a, const Fixed& b) {
-	return(a.getRawBits() * b.getRawBits());
+	return Fixed(a.getRawBits() * b.getRawBits());
 }
 
 // surcharge d'operateur +
 Fixed operator+(const Fixed& a, const Fixed& b) {
-	return(a.getRawBits() + b.getRawBits());
+	return Fixed(a.getRawBits() + b.getRawBits());
 }
 
 // surcharge d'operateur -
 Fixed operator-(const Fixed& a, const Fixed& b) {
-	return(a.getRawBits() - b.getRawBits());
+	return Fixed(a.getRawBits() - b.getRawBits());
 }
 
 // surcharge d'operateur /
 Fixed operator/(const Fixed& a, const Fixed& b) {
-	return(a.getRawBits() / b.getRawBits());
+	return Fixed(a.getRawBits() / b.getRawBits());
 }
 
 // surcharge d'operateur ++

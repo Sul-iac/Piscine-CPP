@@ -6,7 +6,7 @@
 /*   By: qbarron <qbarron@student.42perpignan.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 22:19:56 by qbarron           #+#    #+#             */
-/*   Updated: 2025/04/02 20:59:41 by qbarron          ###   ########.fr       */
+/*   Updated: 2025/04/02 21:37:03 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ class Fixed {
 		Fixed& operator--();
 		Fixed operator++(int);
 		Fixed operator--(int);
+		Fixed& operator=(const Fixed &fixed);
 };
 	
 Fixed operator*(const Fixed& a, const Fixed& b);
