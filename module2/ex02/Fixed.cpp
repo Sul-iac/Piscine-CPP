@@ -6,7 +6,7 @@
 /*   By: qbarron <qbarron@student.42perpignan.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 22:20:52 by qbarron           #+#    #+#             */
-/*   Updated: 2025/04/02 21:44:58 by qbarron          ###   ########.fr       */
+/*   Updated: 2025/04/03 15:19:56 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ std::ostream& operator<<(std::ostream& flux, Fixed const &value) {
 	return(flux);
 }
 
+// surcharge d'operateur =
 Fixed& Fixed::operator=(const Fixed &fixed)
 {
 	this->value = fixed.getRawBits();
@@ -61,7 +62,6 @@ bool operator<(const Fixed& a, const Fixed& b) {
 	return(a.getRawBits() < b.getRawBits());
 }
 
-// surcharge d'operateur >= 
 bool operator>=(const Fixed& a, const Fixed& b) {
 	return(a.getRawBits() >= b.getRawBits());
 }
@@ -81,9 +81,39 @@ bool operator!=(const Fixed& a, const Fixed& b) {
 	return(a.getRawBits() != b.getRawBits());
 }
 
+int Fixed::getFracBits() const {
+	return(this->fracBits);
+}
+
 // surcharge d'operateur *
 Fixed operator*(const Fixed& a, const Fixed& b) {
-	return Fixed(a.getRawBits() * b.getRawBits());
+	Fixed result;
+
+	long product = ((long)a.getRawBits()) * ((long)b.getRawBits());
+	result.setRawBit((int)(product >> a.getFracBits()));
+	return(result);
+}
+
+Fixed& Fixed::min(Fixed& a, Fixed& b) {
+	if(a < b)
+		return(a);
+	else
+		return(b);
+}
+
+Fixed& Fixed::max(Fixed& a, Fixed& b) {
+	if(a > b)
+		return(a);
+	else
+		return(b);
+}
+
+const Fixed& Fixed::min(const Fixed& a, const Fixed& b)  {
+	return(a < b ? a : b);
+}
+
+const Fixed& Fixed::max(const Fixed& a, const Fixed& b)  { 
+	return(a > b ? a : b);
 }
 
 // surcharge d'operateur +
@@ -128,7 +158,7 @@ Fixed Fixed::operator++(int) {
 }
 
 float Fixed::toFloat(void) const {
-	float result = this->value / pow(2, this->fracBits);
+	float result = this->value / (pow(2, this->fracBits));
 	return(result);
 }
 
