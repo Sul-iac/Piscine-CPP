@@ -6,7 +6,7 @@
 /*   By: qbarron <qbarron@student.42perpignan.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 10:30:19 by qbarron           #+#    #+#             */
-/*   Updated: 2025/04/09 12:43:32 by qbarron          ###   ########.fr       */
+/*   Updated: 2025/04/09 16:12:26 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,30 +16,6 @@ ClapTrap::ClapTrap(std::string name) : name(name), hitPoints(10),
 										energyPoints(10), attackDamage(0) {
 	std::cout<< name << " has sponed."<< std::endl;										
 }
-
-// std::ostream& operator<<(std::ostream& flux, ClapTrap const& value) {
-// 	flux << value.getHitPoints() << "\n"
-// 		 << value.getEnergyPoints() << "\n"
-// 		 << value.getAttackDamage() << "\n"
-// 		 << value.getName() << std::endl;
-// 	return(flux);
-// }
-
-// int ClapTrap::getHitPoints() const {
-// 	return(hitPoints);
-// }
-
-// int ClapTrap::getEnergyPoints() const {
-// 	return(energyPoints);
-// }
-
-// int ClapTrap::getAttackDamage() const {
-// 	return(attackDamage);
-// }
-
-// std::string ClapTrap::getName() const {
-// 	return(name);
-// }
 
 void ClapTrap::attack(const std::string &target) {
 	if(this->energyPoints > 0) {

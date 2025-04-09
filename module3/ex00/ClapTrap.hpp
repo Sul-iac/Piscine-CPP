@@ -6,7 +6,7 @@
 /*   By: qbarron <qbarron@student.42perpignan.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 10:22:35 by qbarron           #+#    #+#             */
-/*   Updated: 2025/04/09 12:47:37 by qbarron          ###   ########.fr       */
+/*   Updated: 2025/04/09 16:12:44 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,6 @@ class ClapTrap {
 		void		attack(const std::string& target);
 		void		takeDamage(unsigned int amount);
 		void		beRepaired(unsigned int amount);
-		// int			getHitPoints() const;
-		// int			getEnergyPoints() const;
-		// int			getAttackDamage() const;
-		// std::string getName() const;
 };
-
-// std::ostream& operator<<(std::ostream& flux, ClapTrap const& value);
 
 #endif
