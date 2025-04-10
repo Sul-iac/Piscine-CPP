@@ -6,7 +6,7 @@
 /*   By: qbarron <qbarron@student.42perpignan.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 20:51:13 by qbarron           #+#    #+#             */
-/*   Updated: 2025/04/10 22:35:16 by qbarron          ###   ########.fr       */
+/*   Updated: 2025/04/10 22:37:23 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_calp_name"), 
 												ScavTrap(name), FragTrap(name), _name(name) {
-	_name = name;
 	hitPoints = FragTrap::hitPoints;
 	energyPoints = ScavTrap::energyPoints;
 	attackDamage = FragTrap::attackDamage;
